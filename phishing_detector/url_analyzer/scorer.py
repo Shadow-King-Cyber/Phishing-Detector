@@ -44,11 +44,12 @@ class RiskScorer:
             points += 25
             report.signals.append("URL uses IP address instead of domain name")
 
-        if features.length > 75:
+        if features.length > 120:
+            points += 15
+            report.signals.append(f"URL is unusually long ({features.length} chars)")
+        elif features.length > 75:
             points += 10
             report.signals.append(f"URL is unusually long ({features.length} chars)")
-        elif features.length > 120:
-            points += 15
 
         if features.num_hyphens >= 2:
             points += 8
