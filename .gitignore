@@ -6,3 +6,6 @@ dist/
 build/
 *.pkl
 .env
+.venv/
+venv/
+.pytest_cache/
